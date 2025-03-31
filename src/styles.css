@@ -1,0 +1,41 @@
+@import "tailwindcss";
+
+:root {
+  --jb-font: "JetBrains Mono", monospace;
+  --dark-color: #000;
+  --light-color: #fff;
+  --primary-color: #ae7aff;
+}
+
+@theme inline {
+  --font-jb: var(--jb-font);
+  --color-dark: var(--dark-color);
+  --color-light: var(--light-color);
+  --color-primary: var(--primary-color);
+}
+
+@layer base {
+  body {
+    @apply bg-dark text-light font-jb;
+  }
+
+  h6 {
+    @apply text-lg leading-6 font-extrabold;
+  }
+}
+
+@font-face {
+  font-display: swap;
+  font-family: "JetBrains Mono";
+  font-style: normal;
+  font-weight: 500;
+  src: url("/assets/fonts/JetBrainsMono-Medium.woff2") format("woff2");
+}
+
+@font-face {
+  font-display: swap;
+  font-family: "JetBrains Mono";
+  font-style: normal;
+  font-weight: 800;
+  src: url("/assets/fonts/JetBrainsMono-ExtraBold.woff2") format("woff2");
+}
