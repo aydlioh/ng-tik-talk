@@ -2,23 +2,23 @@
   <div class="grid grid-cols-[70px_1fr] gap-8">
     <div class="rounded-full size-[70px] overflow-hidden">
       <img
-        src="/assets/imgs/ryan.webp"
-        alt="avatar"
+        [src]="profile.avatarUrl | imgUrl"
+        [alt]="profile.username"
         class="object-cover h-full"
       />
     </div>
     <div class="flex flex-col gap-2">
-      <h6>John Doe</h6>
-      <span>aydlioh</span>
+      <h6 class="h6">{{ profile.firstName }} {{ profile.lastName }}</h6>
+      <span class="subtitle">{{ profile.username }}</span>
     </div>
   </div>
-  <div>
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde sequi tempore
-    nisi voluptatem iure facere minus accusamus neque soluta libero voluptatibus
-    perferendis ad expedita, vero vitae ipsam iusto alias dolor!
+  <div class="text-sm leading-4 font-medium">
+    {{ profile.description }}
   </div>
-  <div>
-    <app-tag>Angular</app-tag>
+  <div class="flex flex-wrap gap-2 h-fit">
+    @for (tag of profile.stack; track tag) {
+    <app-tag>{{ tag }}</app-tag>
+    }
   </div>
   <div>
     <app-button>Подписаться</app-button>
