@@ -11,7 +11,7 @@ export class ProfileService {
 
   constructor(private http: HttpClient) {}
 
-  getTestAccounts() {
+  public getTestAccounts() {
     return this.http.get<Profile[]>(`${this.baseUrl}/test_accounts`);
   }
 }
