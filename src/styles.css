@@ -16,7 +16,7 @@
 
 @layer base {
   body {
-    @apply bg-dark text-light font-jb bg-[url(/assets/images/background.jpg)] bg-cover;
+    @apply min-h-svh bg-dark text-light font-jb bg-[url(/assets/images/background.jpg)] bg-cover bg-no-repeat;
   }
 }
 
