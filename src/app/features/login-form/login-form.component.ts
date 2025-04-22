@@ -1,4 +1,4 @@
-import { Component, DestroyRef, inject, signal } from '@angular/core';
+import { Component, DestroyRef, inject, signal, TemplateRef, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import {
   FormControl,
@@ -33,6 +33,7 @@ export class LoginFormComponent {
     private destroyRef: DestroyRef
   ) {}
 
+  public isPasswordVisible = signal(false);
   public pending = signal(false);
   public submitError = signal<string | null>(null);
   public formSubmitted = false;

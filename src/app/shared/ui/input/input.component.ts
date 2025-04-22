@@ -1,4 +1,5 @@
-import { Component, Input, forwardRef } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { Component, Input, TemplateRef, forwardRef } from '@angular/core';
 import { NG_VALUE_ACCESSOR, ControlValueAccessor } from '@angular/forms';
 
 export type InputVariant = 'default' | 'filled' | 'flushed';
@@ -6,6 +7,7 @@ export type InputVariant = 'default' | 'filled' | 'flushed';
 @Component({
   selector: 'app-input',
   templateUrl: './input.component.html',
+  imports: [CommonModule],
   providers: [
     {
       provide: NG_VALUE_ACCESSOR,
@@ -22,11 +24,12 @@ export class InputComponent implements ControlValueAccessor {
   @Input() placeholder = '';
   @Input() disabled = false;
   @Input() label = '';
-  @Input() error?: string  = '';
+  @Input() error?: string = '';
   @Input() helperText = '';
   @Input() required = false;
   @Input() name = '';
   @Input() id = '';
+  @Input() rightContentTemplate?: TemplateRef<any>;
 
   value = '';
   onChange: any = () => {};
@@ -63,10 +66,13 @@ export class InputComponent implements ControlValueAccessor {
       ? 'border-rose-500 focus:border-rose-500 focus:ring-rose-500/20'
       : '';
 
+    const rightPadding = this.rightContentTemplate ? 'pr-10' : '';
+
     return [
       ...baseClasses,
       variantClasses[this.variant],
       errorClasses,
+      rightPadding,
       this.inputClass,
     ].join(' ');
   }

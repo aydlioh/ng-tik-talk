@@ -1,12 +1,14 @@
 <div [class]="containerClass">
   @if (label) {
   <label [for]="id" class="text-sm font-medium text-gray-700 relative">
-    {{ label }} @if(required) { <span class="text-red-500 absolute -right-2.5 -top-1">*</span>}
+    {{ label }} @if(required) {
+    <span class="text-red-500 absolute -right-2.5 -top-1">*</span>}
   </label>
   }
 
   <div class="relative">
     <input
+      autocomplete="new-password"
       [id]="id"
       [name]="name"
       [type]="type"
@@ -16,6 +18,12 @@
       [value]="value"
       (input)="onInput($event)"
     />
+
+    @if (rightContentTemplate) {
+    <div class="absolute right-2 top-1/2 -translate-y-1/2 z-10">
+      <ng-container *ngTemplateOutlet="rightContentTemplate"></ng-container>
+    </div>
+    }
   </div>
 
   @if (helperText && !error) {
