@@ -1,9 +1,12 @@
 <div [class]="containerClass">
   @if (label) {
-  <label [for]="id" class="text-sm font-medium text-gray-700 relative">
-    {{ label }} @if(required) {
-    <span class="text-red-500 absolute -right-2.5 -top-1">*</span>}
-  </label>
+  <div class="pb-0.5">
+    <label [for]="id" class="text-sm font-medium text-gray-700 relative">
+      {{ label }}
+      @if(required) {
+      <span class="text-red-500 absolute -right-2.5 -top-1">*</span>}
+    </label>
+  </div>
   }
 
   <div class="relative">
