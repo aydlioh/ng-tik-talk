@@ -1,5 +1,6 @@
-import { Component, DestroyRef, inject, signal, TemplateRef, ViewChild } from '@angular/core';
+import { Component, DestroyRef, signal } from '@angular/core';
 import { Router } from '@angular/router';
+import { AngularSvgIconModule } from 'angular-svg-icon'
 import {
   FormControl,
   FormGroup,
@@ -21,7 +22,7 @@ interface LoginForm {
 @Component({
   selector: 'app-login-form',
   standalone: true,
-  imports: [ReactiveFormsModule, SharedModule],
+  imports: [ReactiveFormsModule, SharedModule, AngularSvgIconModule],
   templateUrl: './login-form.component.html',
 })
 export class LoginFormComponent {
