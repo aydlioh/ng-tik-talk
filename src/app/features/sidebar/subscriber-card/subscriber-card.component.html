@@ -1,0 +1,10 @@
+<div class="flex flex-row gap-3 py-2">
+  <div class="rounded-full size-10 overflow-hidden">
+    <img
+      [src]="profile.avatarUrl | imgUrl"
+      [alt]="profile.username"
+      class="object-cover h-full"
+    />
+  </div>
+  <strong>{{ profile.firstName }} {{ profile.lastName }}</strong>
+</div>
