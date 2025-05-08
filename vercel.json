@@ -1,14 +1,5 @@
 {
   "version": 2,
-  "builds": [
-    {
-      "src": "apps/ng-1/package.json",
-      "use": "@vercel/static-build",
-      "config": {
-        "distDir": "dist/apps/ng-1"
-      }
-    }
-  ],
   "routes": [
     {
       "src": "/(.*)",
