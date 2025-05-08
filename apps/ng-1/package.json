@@ -1,0 +1,6 @@
+{
+  "name": "ng-1",
+  "scripts": {
+    "build": "npx nx build ng-1"
+  }
+}
