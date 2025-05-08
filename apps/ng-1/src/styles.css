@@ -1,0 +1,67 @@
+@import 'tailwindcss';
+
+:root {
+  --jb-font: 'JetBrains Mono', monospace;
+  --dark-color: #000;
+  --light-color: #fff;
+  --primary-color: #ae7aff;
+}
+
+@theme inline {
+  --font-jb: var(--jb-font);
+  --color-dark: var(--dark-color);
+  --color-light: var(--light-color);
+  --color-primary: var(--primary-color);
+}
+
+@layer base {
+  body {
+    @apply min-h-svh bg-dark text-light font-jb bg-[url(/assets/images/background.jpg)] bg-cover bg-no-repeat;
+  }
+}
+
+@layer components {
+  .h1 {
+    @apply text-5xl leading-14 font-extrabold;
+  }
+
+  .h6 {
+    @apply text-lg leading-6 font-extrabold;
+  }
+
+  .subtitle {
+    @apply text-sm leading-5;
+  }
+}
+
+@font-face {
+  font-display: swap;
+  font-family: 'JetBrains Mono';
+  font-style: normal;
+  font-weight: 400;
+  src: url('/assets/fonts/JetBrainsMono-Regular.ttf') format('ttf');
+}
+
+@font-face {
+  font-display: swap;
+  font-family: 'JetBrains Mono';
+  font-style: normal;
+  font-weight: 500;
+  src: url('/assets/fonts/JetBrainsMono-Medium.ttf') format('ttf');
+}
+
+@font-face {
+  font-display: swap;
+  font-family: 'JetBrains Mono';
+  font-style: normal;
+  font-weight: 700;
+  src: url('/assets/fonts/JetBrainsMono-Bold.ttf') format('ttf');
+}
+
+@font-face {
+  font-display: swap;
+  font-family: 'JetBrains Mono';
+  font-style: normal;
+  font-weight: 800;
+  src: url('/assets/fonts/JetBrainsMono-ExtraBold.ttf') format('ttf');
+}
